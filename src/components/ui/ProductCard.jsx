@@ -1,6 +1,11 @@
-export default function ProductCard({ name, sku, category, description, image }) {
+import { Link } from 'react-router-dom'
+
+export default function ProductCard({ id, name, sku, category, description, image }) {
   return (
-    <div className="group bg-surface-container-low p-8 border-t border-outline/20 hover:bg-surface-container transition-all duration-500 glow-shadow">
+    <Link
+      to={`/store/${id}`}
+      className="group bg-surface-container-low p-8 border-t border-outline/20 hover:bg-surface-container transition-all duration-500 glow-shadow block"
+    >
       <div className="mb-12 aspect-[4/5] overflow-hidden bg-black/40 border border-outline/10">
         <img
           alt={`${name} product`}
@@ -23,6 +28,6 @@ export default function ProductCard({ name, sku, category, description, image })
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

@@ -10,8 +10,8 @@ export default function ProductEcosystem() {
           <div className="w-24 h-px bg-primary" />
         </div>
         <div className="grid md:grid-cols-3 gap-1">
-          {products.map((product) => (
-            <ProductCard key={product.name} {...product} />
+          {products.filter(p => p.status === 'available').map((product) => (
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </div>

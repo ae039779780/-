@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60" fill="none">
+  <!-- DAY wordmark -->
+  <text x="0" y="45" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="48" fill="#eaedfd" letter-spacing="2">DAY</text>
+  <!-- Double slash divider -->
+  <text x="120" y="45" font-family="'Space Grotesk', sans-serif" font-weight="300" font-size="48" fill="#81ecff" letter-spacing="-2">//</text>
+  <!-- AFTR wordmark -->
+  <text x="162" y="45" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="48" fill="#eaedfd" letter-spacing="2">AFTR</text>
+  <!-- Accent line -->
+  <rect x="0" y="54" width="80" height="2" fill="#81ecff"/>
+</svg>

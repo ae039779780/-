@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background -->
+  <rect width="120" height="120" fill="#090e18"/>
+  <!-- Outer border accent -->
+  <rect x="1" y="1" width="118" height="118" stroke="#81ecff" stroke-width="1" fill="none" opacity="0.3"/>
+  <!-- D letterform - geometric -->
+  <path d="M28 30h20c16.6 0 30 13.4 30 30s-13.4 30-30 30H28V30z" fill="none" stroke="#81ecff" stroke-width="4"/>
+  <!-- Inner accent slash -->
+  <line x1="72" y1="28" x2="88" y2="92" stroke="#81ecff" stroke-width="2.5" opacity="0.5"/>
+  <line x1="80" y1="28" x2="96" y2="92" stroke="#81ecff" stroke-width="2.5" opacity="0.5"/>
+  <!-- Bottom accent line -->
+  <rect x="28" y="98" width="40" height="2" fill="#81ecff"/>
+</svg>
