@@ -1,0 +1,52 @@
+{
+  "brand_name": "DAY//AFTR",
+  "tagline": "Recovery System for Demanding Lives",
+  "core_promise": "Help people return to baseline faster, cleaner, and more consistently after long days, travel, heat, low sleep, and demanding routines",
+  "tone": {
+    "voice": ["controlled", "luxury", "clinical", "slightly nocturnal", "high-functioning"],
+    "do": [
+      "Position as lifestyle and wellness",
+      "Emphasize premium quality and design",
+      "Use clinical precision language",
+      "Reference long days, travel, heat, low sleep",
+      "Maintain a controlled, confident tone"
+    ],
+    "dont": [
+      "Reference partying or drug use",
+      "Use discount or bargain language",
+      "Position as hangover cure or harm reduction",
+      "Use bro-science or miracle claims",
+      "Use leafy wellness clichés"
+    ]
+  },
+  "palette": {
+    "primary": {
+      "dark": "#060b16",
+      "surface": "#081223",
+      "deeper": "#050913"
+    },
+    "accent": {
+      "blue": "#2d7bff",
+      "cyan": "#00d4ff",
+      "silver": "#c0c8d4",
+      "ice": "#e0f0ff"
+    },
+    "support": {
+      "midnight_navy": "#0f1d3a",
+      "matte_black": "#1a1a2e"
+    }
+  },
+  "typography": {
+    "direction": "Sharp geometric sans-serif",
+    "hierarchy": "Uppercase micro-labels, large display headings, clean body text",
+    "recommended_fonts": ["Inter", "Neue Haas Grotesk", "Suisse Intl"],
+    "letter_spacing": "Generous tracking on labels and headings (0.1em–0.2em)"
+  },
+  "art_direction": {
+    "references": ["luxury skincare", "clinical supplements", "boutique gifting"],
+    "effects": ["cold gradients", "blue glow orbs", "dark negative space"],
+    "photography": "Low-key lighting, dark backgrounds, product-forward, no natural/leafy imagery",
+    "packaging_mood": ["clinical luxury", "clean black", "cold blue", "silver foil details", "matte surfaces"]
+  },
+  "brand_feel": ["premium", "cold", "sharp", "modern", "minimal", "giftable", "design-sensitive"]
+}

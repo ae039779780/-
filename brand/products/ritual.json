@@ -1,0 +1,19 @@
+{
+  "sku": "RITUAL",
+  "full_name": "DAY//AFTR RITUAL",
+  "category": "Botanical Tea Collection",
+  "descriptor": "Refined Reset Tea",
+  "role": "Lifestyle / ritual extension",
+  "format": ["pyramid sachets", "premium tea box", "individually wrapped sachets"],
+  "flavor_options": ["Botanical Blue", "Cold Citrus Mint", "Night Bloom", "Morning Glass"],
+  "positioning": "Luxury tea ritual for slow mornings, evening unwinding, and refined reset moments",
+  "packaging_direction": ["rigid magnetic box", "midnight blue interior", "dark exterior", "silver / white typography"],
+  "front_label": {
+    "brand": "DAY//AFTR",
+    "product": "RITUAL",
+    "descriptor": "Botanical Tea Collection",
+    "support_claim": "Refined Reset Tea",
+    "secondary_line": "Premium Sachets"
+  },
+  "price_range_ils": [99, 179]
+}

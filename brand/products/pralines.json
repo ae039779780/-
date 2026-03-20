@@ -1,0 +1,18 @@
+{
+  "sku": "PRALINES",
+  "full_name": "DAY//AFTR PRALINES",
+  "category": "Luxury Ritual Chocolates",
+  "descriptor": "Functional Premium Bites",
+  "role": "Giftable emotional premium SKU",
+  "format": ["6-piece gift box", "12-piece gift box", "future limited editions"],
+  "flavor_options": ["dark cacao + blueberry", "citrus shell + dark center", "mint cacao", "espresso dark", "yuzu cacao"],
+  "positioning": "Luxury ritual confectionery for gifting, indulgence, and premium differentiation",
+  "packaging_direction": ["rigid drawer box", "magnetic gift box", "numbered cavities", "midnight blue / black / silver palette"],
+  "front_label": {
+    "brand": "DAY//AFTR",
+    "product": "PRALINES",
+    "descriptor": "Luxury Ritual Chocolates",
+    "support_claim": "Functional Premium Bites"
+  },
+  "price_range_ils": [129, 249]
+}

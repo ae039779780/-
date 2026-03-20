@@ -1,0 +1,22 @@
+{
+  "sku": "BASE",
+  "full_name": "DAY//AFTR BASE",
+  "category": "Daily Baseline Capsules",
+  "descriptor": "Mineral + Routine Support",
+  "role": "Daily retention / subscription support (Phase 2)",
+  "format": ["matte black bottle"],
+  "positioning": "Daily baseline support for demanding routines",
+  "conceptual_ingredients": [
+    "magnesium",
+    "light B-complex",
+    "zinc in restrained dosage",
+    "wheat germ support if technically suitable"
+  ],
+  "front_label": {
+    "brand": "DAY//AFTR",
+    "product": "BASE",
+    "descriptor": "Daily Baseline Capsules",
+    "support_claim": "Mineral + Routine Support"
+  },
+  "price_range_ils": [129, 189]
+}

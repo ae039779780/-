@@ -1,0 +1,28 @@
+{
+  "sku": "RESET",
+  "full_name": "DAY//AFTR RESET",
+  "category": "Recovery Powder",
+  "descriptor": "Electric Blue Recovery Powder",
+  "role": "Hero product",
+  "format": ["premium pouch", "matte rigid jar", "future stick packs"],
+  "flavor_options": ["Blue Citrus", "Arctic Berry", "Midnight Lemon"],
+  "color_direction": "Electric blue using compliant food-grade color system",
+  "positioning": "Hydration + mineral support + reset ritual",
+  "conceptual_ingredients": [
+    "electrolyte system",
+    "magnesium-forward base",
+    "light vitamin support",
+    "wheat germ",
+    "optional greens blend"
+  ],
+  "not_recommended_as_core": ["iron", "5-HTP", "overstuffed superfood mix"],
+  "front_label": {
+    "brand": "DAY//AFTR",
+    "product": "RESET",
+    "descriptor": "Electric Blue Recovery Powder",
+    "support_claim": "Hydration + Mineral Support",
+    "secondary_line": "With Wheat Germ + Greens Blend"
+  },
+  "hero_message": "Designed for long days, travel, heat, low sleep, and high-output routines.",
+  "price_range_ils": [149, 219]
+}
