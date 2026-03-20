@@ -14,31 +14,34 @@ export default function EmailInput({ onSubmit }) {
   if (submitted) {
     return (
       <div className="text-center animate-fade-in-up">
-        <p className="text-accent-cyan font-semibold uppercase tracking-wide text-sm">
+        <p className="text-primary font-headline font-bold uppercase tracking-widest text-sm">
           You're on the list
         </p>
-        <p className="text-accent-silver/60 text-sm mt-2">
-          We'll be in touch when early access opens.
+        <p className="text-on-surface-variant text-sm mt-2">
+          We'll be in touch when alpha access opens.
         </p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col md:flex-row gap-0 max-w-2xl mx-auto border border-outline/20"
+    >
       <input
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        className="flex-1 bg-brand-surface border border-white/10 rounded px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-accent-blue/50 transition-colors text-sm"
+        placeholder="ENTER ACCESS CODE OR EMAIL"
+        className="bg-transparent border-none text-white font-label tracking-[0.15em] p-6 flex-grow focus:ring-1 focus:ring-primary placeholder:text-white/20 text-sm"
         required
       />
       <button
         type="submit"
-        className="bg-accent-blue text-white font-display font-semibold uppercase tracking-wide text-sm px-6 py-3 rounded hover:bg-accent-blue/90 transition-all shadow-lg shadow-accent-blue/20 cursor-pointer"
+        className="bg-primary text-on-primary px-10 py-6 font-headline font-bold uppercase tracking-widest hover:bg-white transition-colors cursor-pointer"
       >
-        Join Waitlist
+        REQUEST ACCESS
       </button>
     </form>
   )

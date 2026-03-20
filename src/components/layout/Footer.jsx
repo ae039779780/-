@@ -1,13 +1,25 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 py-12 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="font-display text-sm font-bold tracking-micro uppercase text-white/40">
-          DAY//AFTR
-        </p>
-        <p className="text-white/20 text-xs">
-          &copy; {new Date().getFullYear()} DAY//AFTR. All rights reserved.
-        </p>
+    <footer className="w-full px-8 flex flex-col md:flex-row justify-between items-center py-12 border-t border-[#717582]/10 bg-[#000000]">
+      <div className="text-white font-black tracking-widest font-headline">
+        DAY//AFTR LABS
+      </div>
+      <div className="flex flex-wrap justify-center gap-8 my-6 md:my-0">
+        <a className="text-[10px] font-label uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors" href="#">
+          Privacy Policy
+        </a>
+        <a className="text-[10px] font-label uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors" href="#">
+          Terms of Service
+        </a>
+        <a className="text-[10px] font-label uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors" href="#">
+          Clinical Standards
+        </a>
+        <a className="text-[10px] font-label uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors" href="#">
+          Contact
+        </a>
+      </div>
+      <div className="text-[10px] font-label uppercase tracking-[0.2em] text-white/40">
+        &copy; {new Date().getFullYear()} DAY//AFTR LABORATORIES. ALL RIGHTS RESERVED.
       </div>
     </footer>
   )

@@ -6,8 +6,8 @@ const positions = {
 
 const intensities = {
   low: 'opacity-20',
-  medium: 'opacity-35',
-  high: 'opacity-50',
+  medium: 'opacity-20',
+  high: 'opacity-30',
 }
 
 export default function GlowEffect({
@@ -17,7 +17,7 @@ export default function GlowEffect({
 }) {
   return (
     <div
-      className={`absolute ${positions[position]} ${intensities[intensity]} w-[600px] h-[600px] rounded-full bg-accent-blue/40 blur-[120px] pointer-events-none animate-glow-pulse will-change-[opacity] ${className}`}
+      className={`absolute ${positions[position]} ${intensities[intensity]} w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] rounded-full bg-primary/20 blur-[120px] pointer-events-none ${className}`}
       aria-hidden="true"
     />
   )

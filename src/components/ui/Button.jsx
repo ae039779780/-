@@ -1,9 +1,9 @@
 const variants = {
   primary:
-    'bg-accent-blue text-white hover:bg-accent-blue/90 shadow-lg shadow-accent-blue/20',
+    'bg-primary text-on-primary hover:shadow-[0_0_20px_rgba(129,236,255,0.4)] active:scale-95',
   secondary:
-    'border border-accent-blue text-accent-blue hover:bg-accent-blue/10',
-  ghost: 'text-accent-silver hover:text-white',
+    'border border-outline/30 text-white hover:bg-white/5',
+  ghost: 'text-on-surface-variant hover:text-white',
 }
 
 const sizes = {
@@ -21,7 +21,7 @@ export default function Button({
 }) {
   return (
     <button
-      className={`font-display font-semibold uppercase tracking-wide rounded transition-all duration-200 cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`font-label font-bold uppercase tracking-widest transition-all cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {children}

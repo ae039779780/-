@@ -1,35 +1,30 @@
-import SectionHeading from '../ui/SectionHeading'
+const phases = [
+  {
+    label: 'Phase 01: Hydration',
+    text: 'RECOVERY FOR LONG DAYS UNDER HIGH INTENSITY ENVIRONMENTS.',
+  },
+  {
+    label: 'Phase 02: Equilibrium',
+    text: 'STABILIZE CORTISOL SPIKES INDUCED BY TRANSCONTINENTAL TRAVEL.',
+  },
+  {
+    label: 'Phase 03: Thermal',
+    text: 'MITIGATE CORE TEMPERATURE STRESS DURING EXTREME HEAT EXPOSURE.',
+  },
+]
 
 export default function BrandPositioning() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <SectionHeading
-          label="The Philosophy"
-          heading="Built for Demanding Lives"
-          subtext="DAY//AFTR exists for people who push hard and need a smarter way back to baseline. Not a quick fix — a system."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {[
-            {
-              title: 'Clinical Precision',
-              text: 'Formulated with purpose. Every ingredient serves the system — no filler, no gimmicks, no overstuffed labels.',
-            },
-            {
-              title: 'Luxury Experience',
-              text: 'From packaging to ritual, every touchpoint is designed to feel premium. Recovery should never feel clinical.',
-            },
-            {
-              title: 'Lifestyle Integration',
-              text: 'Powder, tea, and confectionery work together as a cohesive recovery ecosystem for different moments.',
-            },
-          ].map((item) => (
-            <div key={item.title} className="text-center md:text-left">
-              <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-white mb-3">
-                {item.title}
+    <section className="py-24 bg-surface-container-lowest border-y border-outline/10">
+      <div className="container mx-auto px-8">
+        <div className="grid md:grid-cols-3 gap-16">
+          {phases.map((phase) => (
+            <div key={phase.label} className="space-y-4">
+              <h3 className="font-label text-primary text-xs tracking-[0.2em] uppercase">
+                {phase.label}
               </h3>
-              <p className="text-accent-silver/50 text-sm leading-relaxed">
-                {item.text}
+              <p className="font-headline text-2xl text-white/90 leading-snug">
+                {phase.text}
               </p>
             </div>
           ))}
