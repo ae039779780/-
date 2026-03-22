@@ -49,6 +49,16 @@ export default function Navbar() {
         >
           Waitlist
         </a>
+        <Link
+          className={`text-sm font-label uppercase tracking-[0.15em] transition-colors ${
+            location.pathname.startsWith('/dashboard')
+              ? 'text-primary border-b-2 border-primary pb-1'
+              : 'text-white/70 hover:text-white'
+          }`}
+          to="/dashboard"
+        >
+          Dashboard
+        </Link>
       </div>
       <div className="flex items-center space-x-4">
         <button
