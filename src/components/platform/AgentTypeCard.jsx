@@ -1,30 +1,23 @@
-export default function AgentTypeCard({ name, icon, tagline, description, capabilities, model, category }) {
+export default function AgentTypeCard({ agent }) {
   return (
-    <div className="glass-card glow-shadow p-6 space-y-4 border border-outline/10 hover:border-primary/15 transition-all group">
-      <div className="flex items-start justify-between">
-        <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-          <span className="material-symbols-outlined text-primary text-lg">{icon}</span>
-        </div>
-        <span className="font-label text-[9px] tracking-widest uppercase text-white/30 border border-outline/10 px-2 py-0.5">
-          {category}
-        </span>
+    <div className="bg-surface-container-low border border-outline/10 p-6 hover:border-primary/20 transition">
+      <div className="bg-primary/10 w-12 h-12 flex items-center justify-center">
+        <span className="material-symbols-outlined text-primary text-xl">{agent.icon}</span>
       </div>
-      <div>
-        <h3 className="font-headline text-lg font-bold">{name}</h3>
-        <p className="text-primary text-xs font-label tracking-wider uppercase mt-0.5">{tagline}</p>
-      </div>
-      <p className="text-white/50 text-sm leading-relaxed">{description}</p>
-      <ul className="space-y-1.5">
-        {capabilities.map((cap) => (
+      <h3 className="font-headline text-lg font-bold mt-4">{agent.name}</h3>
+      <p className="text-primary text-xs font-label tracking-widest uppercase">{agent.tagline}</p>
+      <p className="text-white/50 text-sm mt-2">{agent.description}</p>
+      <ul className="mt-4 space-y-1.5">
+        {agent.capabilities.map((cap) => (
           <li key={cap} className="flex items-center gap-2 text-xs text-white/40">
-            <span className="w-1 h-1 bg-primary" />
+            <span className="w-1.5 h-1.5 bg-primary" />
             {cap}
           </li>
         ))}
       </ul>
-      <div className="pt-3 border-t border-outline/10">
-        <span className="font-label text-[9px] tracking-widest text-white/20 uppercase">
-          {model}
+      <div className="mt-4">
+        <span className="border border-outline/20 px-2 py-1 text-[10px] font-label tracking-widest text-white/30">
+          {agent.model}
         </span>
       </div>
     </div>

@@ -1,49 +1,56 @@
+import SectionHeading from '../ui/SectionHeading'
+
 export default function ClawHowItWorks() {
   const steps = [
     {
-      num: '01',
+      num: 1,
       title: 'Describe Your Task',
-      description: 'Tell Claw what you need in plain language. "Analyze our top 5 competitors and generate a positioning report."',
       icon: 'edit_note',
+      description:
+        'Tell Claw what you need in plain language. Describe the goal, provide context, and let the AI figure out the rest.',
     },
     {
-      num: '02',
+      num: 2,
       title: 'Claw Plans the Workflow',
-      description: 'Claw breaks the task into steps, selects the right agents, and creates an execution plan for your approval.',
       icon: 'account_tree',
+      description:
+        'Claw breaks your task into discrete steps, selects the best agents for each stage, and builds an execution plan.',
     },
     {
-      num: '03',
+      num: 3,
       title: 'Autonomous Execution',
-      description: 'Agents execute each step in sequence. Progress is tracked in real time. Results are compiled and delivered.',
-      icon: 'auto_mode',
+      icon: 'rocket_launch',
+      description:
+        'Agents execute each step in the background with full logging. Monitor progress in real time or check results later.',
     },
   ]
 
   return (
-    <section className="py-32">
+    <section className="py-24 bg-surface-container-lowest">
       <div className="container mx-auto px-8">
-        <div className="text-center mb-16">
-          <p className="font-label text-primary text-xs tracking-[0.2em] uppercase mb-4">
-            HOW IT WORKS
-          </p>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
-            Three Steps to Autonomous Work
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <SectionHeading label="HOW IT WORKS" heading="From Task to Result" />
+        <div className="grid md:grid-cols-3 gap-8 relative">
           {steps.map((step, i) => (
-            <div key={step.num} className="relative space-y-4">
+            <div key={step.num} className="text-center relative">
+              {/* Connecting line between steps */}
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-full w-full h-px bg-outline/10 -translate-x-1/2 z-0" />
+                <div className="hidden md:block absolute top-5 left-[calc(50%+28px)] w-[calc(100%-56px)] h-px border-t border-dashed border-outline/20 z-0" />
               )}
-              <div className="flex items-center gap-4 relative z-10">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary text-xl">{step.icon}</span>
-                </div>
-                <span className="font-headline text-3xl font-bold text-white/10">{step.num}</span>
+
+              {/* Numbered badge */}
+              <div className="w-10 h-10 bg-primary text-on-primary font-headline font-bold flex items-center justify-center mx-auto mb-4 relative z-10">
+                {step.num}
               </div>
-              <h3 className="font-headline text-xl font-bold">{step.title}</h3>
+
+              {/* Icon */}
+              <div className="flex justify-center mb-4">
+                <span className="material-symbols-outlined text-primary text-3xl">
+                  {step.icon}
+                </span>
+              </div>
+
+              {/* Title & description */}
+              <h3 className="font-headline text-lg font-bold mb-2">{step.title}</h3>
               <p className="text-white/50 text-sm leading-relaxed">{step.description}</p>
             </div>
           ))}

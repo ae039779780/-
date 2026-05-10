@@ -1,106 +1,102 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/ui/SectionHeading'
+import Button from '../components/ui/Button'
 import AgentTypeCard from '../components/platform/AgentTypeCard'
 import MixtureOfAgents from '../components/platform/MixtureOfAgents'
-import PlatformCTA from '../components/platform/PlatformCTA'
-import { agentShowcaseData } from '../lib/platformConstants'
-
-const categories = ['All', 'Core', 'Marketing', 'Operations', 'Creative', 'Data', 'Support']
-
-const storeTemplates = [
-  { name: 'Email Outreach', icon: 'forward_to_inbox', description: 'Automated email campaigns with personalization.' },
-  { name: 'SEO Optimizer', icon: 'travel_explore', description: 'On-page SEO analysis and keyword recommendations.' },
-  { name: 'Financial Analyst', icon: 'account_balance', description: 'Revenue modeling and financial projections.' },
-  { name: 'Legal Reviewer', icon: 'gavel', description: 'Contract review and compliance checking.' },
-  { name: 'Social Listener', icon: 'hearing', description: 'Social media monitoring and sentiment analysis.' },
-  { name: 'Copywriter', icon: 'edit_note', description: 'Long-form and short-form content generation.' },
-]
+import { agentShowcaseData, agentCategories, agentStoreTemplates } from '../lib/platformConstants'
 
 export default function AgentsShowcasePage() {
-  const [activeCategory, setActiveCategory] = useState('All')
+  const [activeCategory, setActiveCategory] = useState('all')
 
-  const filteredAgents = activeCategory === 'All'
+  const filteredAgents = activeCategory === 'all'
     ? agentShowcaseData
-    : agentShowcaseData.filter(a => a.category === activeCategory)
+    : agentShowcaseData.filter((a) => a.category === activeCategory)
 
   return (
-    <div className="min-h-screen pt-24 pb-0">
+    <div className="min-h-screen pt-24 pb-32">
       <div className="container mx-auto px-8">
-        <div className="mb-20 space-y-4">
-          <p className="font-label text-primary text-xs tracking-[0.2em] uppercase">
-            AI Agent Ecosystem
-          </p>
-          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight">
-            MEET YOUR <br />
-            <span className="text-primary">AI TEAM</span>
-          </h1>
-          <div className="w-24 h-px bg-primary" />
-          <p className="text-white/60 text-lg max-w-xl leading-relaxed">
-            Nine specialized agents, each mastering a different domain. Powered by a
-            Mixture-of-Agents architecture that routes every task to the optimal model.
-          </p>
-        </div>
+        <SectionHeading
+          label="AI AGENTS"
+          heading="Meet Your AI Team"
+          subtext="Nine specialized agents powered by a Mixture-of-Agents architecture that routes every task to the optimal model for maximum accuracy and speed."
+        />
       </div>
 
+      {/* Mixture of Agents diagram */}
       <MixtureOfAgents />
 
+      {/* Category filter + Agent grid */}
       <section className="py-24">
         <div className="container mx-auto px-8">
           <div className="flex flex-wrap gap-2 mb-12">
-            {categories.map((cat) => (
+            {agentCategories.map((cat) => (
               <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 font-label text-xs tracking-widest uppercase transition-all cursor-pointer ${
-                  activeCategory === cat
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-4 py-2 text-xs font-label tracking-widest uppercase cursor-pointer transition-all ${
+                  activeCategory === cat.id
                     ? 'bg-primary text-on-primary'
-                    : 'border border-outline/20 text-white/50 hover:border-primary/30'
+                    : 'border border-outline/20 text-white/60 hover:border-primary/30'
                 }`}
               >
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredAgents.map((agent) => (
-              <AgentTypeCard key={agent.id} {...agent} />
+              <AgentTypeCard key={agent.id} agent={agent} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Agent Store Preview */}
-      <section className="py-24 bg-surface-container-lowest border-y border-outline/10">
+      {/* Agent Store */}
+      <section className="py-24">
         <div className="container mx-auto px-8">
           <SectionHeading
             label="AGENT STORE"
-            heading="Extend Your Workforce"
-            subtext="Install pre-built agent templates for specialized tasks. Available on Plus and Pro plans."
+            heading="Extend Your Team"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {storeTemplates.map((template) => (
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {agentStoreTemplates.map((template) => (
               <div
                 key={template.name}
-                className="flex items-start gap-4 p-5 border border-outline/10 hover:border-primary/15 transition-all group"
+                className="bg-surface-container-low border border-outline/10 p-6 space-y-3"
               >
-                <div className="w-10 h-10 bg-surface-container flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-primary/60 text-lg">{template.icon}</span>
+                <div className="flex items-start justify-between">
+                  <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-lg">
+                      {template.icon}
+                    </span>
+                  </div>
+                  <span className="font-label text-[9px] tracking-widest uppercase text-white/30 border border-outline/10 px-2 py-0.5">
+                    {template.category}
+                  </span>
                 </div>
-                <div>
-                  <h4 className="font-headline text-sm font-bold">{template.name}</h4>
-                  <p className="text-white/40 text-xs mt-1 leading-relaxed">{template.description}</p>
-                </div>
+                <h4 className="font-headline text-sm font-bold">{template.name}</h4>
+                <p className="text-white/50 text-sm leading-relaxed">{template.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <PlatformCTA
-        headline="Deploy Your First Agent Today"
-        subtext="Get started in seconds. No setup required."
-        variant="buttons"
-      />
+      {/* Bottom CTA */}
+      <div className="container mx-auto px-8 text-center space-y-6">
+        <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-white">
+          Deploy Your First Agent
+        </h2>
+        <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
+          Get started in seconds. No setup required.
+        </p>
+        <Link to="/dashboard">
+          <Button variant="primary" size="lg">Get Started</Button>
+        </Link>
+      </div>
     </div>
   )
 }

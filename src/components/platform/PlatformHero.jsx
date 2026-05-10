@@ -5,16 +5,15 @@ import DashboardPreview from './DashboardPreview'
 
 export default function PlatformHero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-16 overflow-hidden">
-      <GlowEffect position="center" intensity="low" />
+    <section className="relative min-h-screen pt-24 flex items-center overflow-hidden">
       <div className="container mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        {/* Left Column */}
         <div className="max-w-xl">
           <p className="font-label text-primary uppercase tracking-[0.3em] mb-6 text-xs">
             AI WORKSPACE PLATFORM
           </p>
-          <h1 className="font-headline font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6">
-            YOUR ENTIRE TEAM, <br />
-            <span className="text-primary">POWERED BY AI</span>
+          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+            YOUR ENTIRE TEAM, POWERED BY AI
           </h1>
           <p className="text-white/50 text-lg leading-relaxed mb-8 max-w-lg">
             Deploy specialized AI agents that work together. Research, create, analyze,
@@ -25,23 +24,17 @@ export default function PlatformHero() {
               <Button size="lg">Start Free</Button>
             </Link>
             <Link to="/platform/agents">
-              <Button variant="secondary" size="lg">Meet the Agents</Button>
+              <Button variant="secondary" size="lg">Explore Agents</Button>
             </Link>
           </div>
-          <div className="mt-8 flex items-center gap-6">
-            <div className="flex items-center gap-2 text-white/30 text-xs font-label tracking-wider">
-              <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
-              No credit card
-            </div>
-            <div className="flex items-center gap-2 text-white/30 text-xs font-label tracking-wider">
-              <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
-              2,400 credits/day free
-            </div>
-          </div>
         </div>
-        <div className="relative group">
-          <div className="absolute -inset-8 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <DashboardPreview />
+
+        {/* Right Column */}
+        <div className="relative">
+          <GlowEffect position="center" intensity="medium" />
+          <div className="relative z-10">
+            <DashboardPreview />
+          </div>
         </div>
       </div>
     </section>

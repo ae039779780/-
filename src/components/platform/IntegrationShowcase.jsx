@@ -1,31 +1,29 @@
-import SectionHeading from '../ui/SectionHeading'
 import { integrations } from '../../lib/platformConstants'
 
 export default function IntegrationShowcase() {
   return (
-    <section className="py-32 bg-surface-container-lowest border-y border-outline/10">
-      <div className="container mx-auto px-8">
-        <SectionHeading
-          label="INTEGRATIONS"
-          heading="Connect Everything"
-          subtext="Your agents work where you work. Connect the tools your team already uses."
-        />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-          {integrations.map((integration) => (
-            <div
-              key={integration.name}
-              className="flex flex-col items-center gap-3 p-6 border border-outline/10 hover:border-primary/15 transition-all group"
-            >
-              <div className="w-12 h-12 bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                <span className="material-symbols-outlined text-white/40 group-hover:text-primary text-xl transition-colors">
-                  {integration.icon}
-                </span>
-              </div>
-              <span className="font-label text-xs tracking-wider text-white/50">{integration.name}</span>
-            </div>
-          ))}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {integrations.map((integration) => (
+        <div
+          key={integration.name}
+          className="bg-surface-container-low border border-outline/10 p-6 text-center hover:border-primary/20 transition-all"
+        >
+          <span className="material-symbols-outlined text-2xl text-primary mb-2 block">
+            {integration.icon}
+          </span>
+          <span className="text-sm font-label block mb-2">{integration.name}</span>
+          <div className="flex items-center justify-center gap-1">
+            <span
+              className={`inline-block w-1.5 h-1.5 rounded-full ${
+                integration.connected ? 'bg-green-500' : 'bg-white/20'
+              }`}
+            />
+            <span className="text-[10px] text-white/30">
+              {integration.connected ? 'Connected' : 'Available'}
+            </span>
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   )
 }

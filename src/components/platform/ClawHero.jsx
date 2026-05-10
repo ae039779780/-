@@ -1,26 +1,31 @@
 import { Link } from 'react-router-dom'
 import Button from '../ui/Button'
-import GlowEffect from '../ui/GlowEffect'
 
 export default function ClawHero() {
+  const tasks = [
+    { name: 'Competitor Analysis Report', status: 'completed', progress: 100 },
+    { name: 'Weekly Content Pipeline', status: 'running', progress: 68 },
+    { name: 'Supplier Outreach Campaign', status: 'queued', progress: 0 },
+  ]
+
   return (
-    <section className="relative min-h-[80vh] flex flex-col justify-center pt-16 overflow-hidden">
-      <GlowEffect position="top-right" intensity="low" />
-      <div className="container mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-        <div className="max-w-xl">
-          <p className="font-label text-primary uppercase tracking-[0.3em] mb-6 text-xs">
+    <section className="relative py-24">
+      <div className="container mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+        {/* Left column */}
+        <div>
+          <p className="font-label text-primary text-xs tracking-[0.2em] uppercase mb-4">
             INTRODUCING CLAW
           </p>
-          <h1 className="font-headline font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6">
-            YOUR ALWAYS-ON <br />
-            <span className="text-primary">AI EMPLOYEE</span>
+          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight mb-6">
+            YOUR ALWAYS-ON AI EMPLOYEE
           </h1>
-          <p className="text-white/50 text-lg leading-relaxed mb-8 max-w-lg">
-            An autonomous AI worker that runs 24/7 — managing multi-step tasks
-            across your agents while you focus on what matters.
+          <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-8">
+            Claw is your autonomous AI worker that operates 24/7 — orchestrating
+            multi-agent workflows, executing complex tasks, and delivering results
+            while you focus on strategy. No micromanagement required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/platform/pricing">
+            <Link to="/dashboard">
               <Button size="lg">Deploy Claw</Button>
             </Link>
             <Link to="/platform/pricing">
@@ -29,41 +34,42 @@ export default function ClawHero() {
           </div>
         </div>
 
-        {/* Task List Mockup */}
-        <div className="relative group">
-          <div className="absolute -inset-8 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="bg-surface-container-lowest border border-outline/10 p-6 space-y-4 relative">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-lg">auto_mode</span>
-                <span className="font-headline text-sm font-bold">Claw Autopilot</span>
-              </div>
-              <span className="font-label text-[9px] tracking-widest text-primary/60 uppercase bg-primary/10 px-2 py-1">Active</span>
-            </div>
-            {[
-              { task: 'Competitor Analysis Report', progress: 100, status: 'done' },
-              { task: 'Weekly Content Pipeline', progress: 72, status: 'running' },
-              { task: 'Supplier Outreach Campaign', progress: 45, status: 'running' },
-              { task: 'SEO & Performance Audit', progress: 0, status: 'queued' },
-            ].map((item) => (
-              <div key={item.task} className="bg-surface-container p-4 border border-outline/5 space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-white/70">{item.task}</span>
-                  <span className={`font-label text-[8px] tracking-widest uppercase ${
-                    item.status === 'done' ? 'text-primary' : item.status === 'running' ? 'text-tertiary-dim' : 'text-white/30'
-                  }`}>
-                    {item.status}
-                  </span>
-                </div>
-                <div className="w-full h-1 bg-surface-container-highest">
-                  <div
-                    className={`h-full transition-all ${item.status === 'done' ? 'bg-primary' : 'bg-tertiary-dim'}`}
-                    style={{ width: `${item.progress}%` }}
-                  />
-                </div>
-              </div>
-            ))}
+        {/* Right column — Task list mockup */}
+        <div className="bg-surface-container-low border border-outline/10 p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="material-symbols-outlined text-primary text-lg">auto_mode</span>
+            <span className="font-headline text-sm font-bold">Claw Autopilot</span>
+            <span className="ml-auto font-label text-[9px] tracking-widest text-primary uppercase bg-primary/10 px-2 py-1">
+              Active
+            </span>
           </div>
+          {tasks.map((task) => (
+            <div
+              key={task.name}
+              className="bg-surface-container-low border border-outline/10 p-4 mb-2"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-white/70">{task.name}</span>
+                <span
+                  className={`font-label text-[9px] tracking-widest uppercase px-2 py-0.5 ${
+                    task.status === 'completed'
+                      ? 'text-primary bg-primary/10'
+                      : task.status === 'running'
+                        ? 'text-yellow-400 bg-yellow-400/10'
+                        : 'text-white/30 bg-white/5'
+                  }`}
+                >
+                  {task.status}
+                </span>
+              </div>
+              <div className="h-1 bg-surface-container-highest">
+                <div
+                  className="h-full bg-primary transition-all"
+                  style={{ width: `${task.progress}%` }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

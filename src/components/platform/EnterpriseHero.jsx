@@ -1,28 +1,29 @@
 import { Link } from 'react-router-dom'
 import Button from '../ui/Button'
-import GlowEffect from '../ui/GlowEffect'
 
 export default function EnterpriseHero() {
   return (
-    <section className="relative min-h-[70vh] flex flex-col justify-center pt-16 overflow-hidden">
-      <GlowEffect position="bottom-left" intensity="low" />
+    <section className="py-24 min-h-[70vh] flex items-center relative overflow-hidden">
+      {/* Glow behind text */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-3xl pointer-events-none" />
+
       <div className="container mx-auto px-8 relative z-10 text-center max-w-4xl">
-        <p className="font-label text-primary uppercase tracking-[0.3em] mb-6 text-xs">
-          FOR TEAMS & ORGANIZATIONS
+        <p className="font-label text-primary text-xs tracking-[0.2em] uppercase mb-4">
+          FOR TEAMS &amp; ORGANIZATIONS
         </p>
-        <h1 className="font-headline font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6">
-          AI WORKFORCE <br />
-          <span className="text-primary">AT SCALE</span>
+        <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          AI WORKFORCE AT SCALE
         </h1>
-        <p className="text-white/50 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-          Enterprise-grade security, team management, custom agents, and unlimited
-          capacity. Built for organizations that demand more from their AI infrastructure.
+        <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          Enterprise-grade security, team management, custom agent builders, and
+          unlimited capacity. Built for organizations that demand total control
+          over their AI infrastructure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg">Request Demo</Button>
           <Link to="/platform/pricing">
-            <Button size="lg">Get Pro</Button>
+            <Button variant="secondary" size="lg">View Pricing</Button>
           </Link>
-          <Button variant="secondary" size="lg">Contact Sales</Button>
         </div>
       </div>
     </section>

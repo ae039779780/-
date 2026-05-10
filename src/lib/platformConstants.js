@@ -14,7 +14,7 @@ export const agentShowcaseData = [
     description: 'Central intelligence that coordinates across 9 LLMs to route tasks to the optimal model for each step.',
     capabilities: ['Multi-step research', 'Content workflows', 'Cross-agent orchestration', 'Context synthesis'],
     model: 'Mixture-of-Agents',
-    category: 'Core',
+    category: 'core',
   },
   {
     id: 'brand-agent',
@@ -24,7 +24,7 @@ export const agentShowcaseData = [
     description: 'Enforces brand consistency across every touchpoint — copy, visuals, tone, and positioning.',
     capabilities: ['Brand voice enforcement', 'Visual identity checks', 'Copy generation', 'Style guide compliance'],
     model: 'Claude Opus',
-    category: 'Marketing',
+    category: 'marketing',
   },
   {
     id: 'product-agent',
@@ -34,7 +34,7 @@ export const agentShowcaseData = [
     description: 'Manages product specs, formulation data, SKU details, and competitive positioning.',
     capabilities: ['SKU management', 'Formulation analysis', 'Competitive research', 'Product documentation'],
     model: 'Claude Sonnet',
-    category: 'Operations',
+    category: 'operations',
   },
   {
     id: 'marketing-agent',
@@ -44,7 +44,7 @@ export const agentShowcaseData = [
     description: 'Plans campaigns, writes copy, schedules content, and analyzes marketing performance.',
     capabilities: ['Campaign planning', 'Social media content', 'Email sequences', 'Performance analytics'],
     model: 'Claude Sonnet',
-    category: 'Marketing',
+    category: 'marketing',
   },
   {
     id: 'analytics-agent',
@@ -54,7 +54,7 @@ export const agentShowcaseData = [
     description: 'Processes raw data into actionable insights — revenue, engagement, funnel metrics, and forecasting.',
     capabilities: ['Revenue analysis', 'Funnel metrics', 'Trend forecasting', 'Custom reports'],
     model: 'Claude Haiku',
-    category: 'Data',
+    category: 'data',
   },
   {
     id: 'supplier-agent',
@@ -64,7 +64,7 @@ export const agentShowcaseData = [
     description: 'Manages supplier relationships, evaluates manufacturers, and tracks procurement timelines.',
     capabilities: ['Supplier evaluation', 'Cost optimization', 'Timeline tracking', 'Quality assurance'],
     model: 'Claude Sonnet',
-    category: 'Operations',
+    category: 'operations',
   },
   {
     id: 'design-agent',
@@ -74,7 +74,7 @@ export const agentShowcaseData = [
     description: 'Generates design assets, mockups, packaging concepts, and visual content at scale.',
     capabilities: ['Asset generation', 'Packaging design', 'UI mockups', 'Brand visuals'],
     model: 'Claude Opus',
-    category: 'Creative',
+    category: 'creative',
   },
   {
     id: 'customer-agent',
@@ -84,7 +84,7 @@ export const agentShowcaseData = [
     description: 'Handles customer inquiries, manages feedback loops, and generates support documentation.',
     capabilities: ['Support automation', 'FAQ generation', 'Feedback analysis', 'Ticket routing'],
     model: 'Claude Haiku',
-    category: 'Support',
+    category: 'support',
   },
   {
     id: 'autopilot-agent',
@@ -94,8 +94,27 @@ export const agentShowcaseData = [
     description: 'Runs multi-step workflows in the background — research, content creation, analysis — without supervision.',
     capabilities: ['Background execution', 'Multi-step workflows', 'Progress tracking', 'Autonomous decisions'],
     model: 'Mixture-of-Agents',
-    category: 'Core',
+    category: 'core',
   },
+]
+
+export const agentCategories = [
+  { id: 'all', label: 'All Agents' },
+  { id: 'core', label: 'Core' },
+  { id: 'marketing', label: 'Marketing' },
+  { id: 'operations', label: 'Operations' },
+  { id: 'creative', label: 'Creative' },
+  { id: 'data', label: 'Data' },
+  { id: 'support', label: 'Support' },
+]
+
+export const agentStoreTemplates = [
+  { name: 'Email Outreach', category: 'marketing', icon: 'forward_to_inbox', description: 'Automate personalized email campaigns with AI-crafted messaging.' },
+  { name: 'SEO Optimizer', category: 'marketing', icon: 'travel_explore', description: 'Analyze and improve search rankings across your content.' },
+  { name: 'Financial Analyst', category: 'data', icon: 'account_balance', description: 'Track budgets, forecast revenue, and generate financial reports.' },
+  { name: 'Legal Reviewer', category: 'operations', icon: 'gavel', description: 'Review contracts and flag potential compliance issues.' },
+  { name: 'Social Listener', category: 'marketing', icon: 'hearing', description: 'Monitor brand mentions and sentiment across social platforms.' },
+  { name: 'Copywriter', category: 'creative', icon: 'edit_note', description: 'Generate on-brand copy for ads, emails, and landing pages.' },
 ]
 
 export const platformFeatures = [
